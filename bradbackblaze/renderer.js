@@ -17,7 +17,7 @@ axios.post(
             }
         })
     .then(function (response) {
-        var data = response.data
+        let data = response.data
         credentials = {
             applicationKey: applicationKey,
             apiUrl: data.apiUrl,
@@ -56,10 +56,10 @@ const uploadFile = (filepath, fileName) => {
                 }
             })
         .then(function (response) {
-            var uploadUrl = response.data.uploadUrl;
-            var uploadAuthorizationToken = response.data.authorizationToken;
+            let uploadUrl = response.data.uploadUrl;
+            let uploadAuthorizationToken = response.data.authorizationToken;
 
-            var sha1 = crypto.createHash('sha1').update(fileLocation).digest("hex");
+            let sha1 = crypto.createHash('sha1').update(fileLocation).digest("hex");
 
             axios.post(
                 uploadUrl,
@@ -115,7 +115,7 @@ document.getElementById('submit').addEventListener('click', () => {
 
     // Start upload
     // This needs to be converted into await/async
-    for (var i = 0; i < totalNumberOfFiles; i++){
+    for (let i = 0; i < totalNumberOfFiles; i++){
          let filePathLocation = filePath[i].path;
          let newFileName = path.basename(filePathLocation);
          let finalNewFileName = bucketFolder + "/" + newFileName;
