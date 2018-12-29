@@ -38,7 +38,7 @@ const crypto = require('crypto');
 const path = require('path');
 const fs = require('fs');
 
-const bucketId = "ff89d5546fdab1f26d510e17";
+const bucketId = "1";
 
 // File tracking
 let fileNumber = 1;
