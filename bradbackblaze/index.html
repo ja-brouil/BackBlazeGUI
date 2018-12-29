@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Back Blaze Uploader</title>
+  </head>
+  <body>
+
+    <div>
+      <label for="fileUploadChooser">Select files for upload:</label>
+      <input type="file" id="fileUploadChooser" name="fileToUpload" multiple>
+      <p>You may select multiple files but not folders.</p>
+      <p>All whitespaces in your files will be converted to underscores.</p>
+      <p id="errorFile"></p>
+    </div>
+    <div>
+      <label for="backBlazeLocation">BackBlaze Location</label>
+      <input type="text" spellcheck="false" id="bucketLocation">
+      <p id="bucketLocationError"></p>
+    </div>
+    <div>
+      <button id="submit">Upload</button>
+    </div>
+    <div>
+      <p>Console Log:</p>
+      <textarea rows="15" cols="100" readonly="true" id="consolemessage"></textarea>
+    </div>
+    <script>
+      require('./renderer.js')
+    </script>
+  </body>
+  <style>
+    label {
+      display: block;
+      font: 1rem 'Fira Sans', sans-serif;
+    }
+  
+    input,
+    label {
+      margin: .4rem 0;
+    }
+  
+    .note {
+      font-size: .8em;
+    }
+
+    #errorFile,
+    bucketLocationError {
+      color: red;
+    }
+    </style>
+</html>
